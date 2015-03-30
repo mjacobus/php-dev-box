@@ -11,9 +11,6 @@ function mecho() {
 mecho "Updating index..."
   sudo apt-get update -y
 
-mecho "Installing vim..."
-  sudo apt-get install -y vim
-
 mecho "Installing vim-gnome..."
   sudo apt-get install -y vim-gnome
 
@@ -55,10 +52,11 @@ mecho "Installing php5-dev, pear, xdebug..."
   sudo ln -s $XDEBUG_CONF_PATH /etc/php5/cli/conf.d/30-xdebug.ini
 
 mecho "Installing composer..."
-  curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar /usr/bin
-  sudo ln -s /usr/bin/composer.phar /usr/bin/composer
-
+  if ! [ -f /usr/local/bin/composer ]; then
+    curl -sS https://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/bin
+    sudo ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+  fi
 
 mecho "Installing silversearcher-ag, tmux, ctags"
   sudo apt-get install -y silversearcher-ag tmux ctags
@@ -82,6 +80,6 @@ mecho "Creating empty git config file..."
   touch ~/.gitconfig
 
 mecho "Installing dotfiles..."
-  git clone git@github.com/mjacobus/.dotfiles ~/.dotfiles
+  git clone http://github.com/mjacobus/.dotfiles.git ~/.dotfiles
   cd ~/.dotfiles && ./install.sh
   cd -
