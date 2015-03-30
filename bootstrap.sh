@@ -73,13 +73,12 @@ mecho "Installing zshell..."
 mecho "Installing oh-my-zsh..."
   wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
-mecho "Setting shell to zshell..."
-  chsh -s `which zsh`
-
 mecho "Creating empty git config file..."
   touch ~/.gitconfig
 
 mecho "Installing dotfiles..."
   git clone http://github.com/mjacobus/.dotfiles.git ~/.dotfiles
   cd ~/.dotfiles && ./install.sh
-  cd -
+
+mecho "Setting shell to zshell..."
+  sudo chsh -s `which zsh`
