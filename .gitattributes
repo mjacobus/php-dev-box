@@ -1,0 +1,5 @@
+# sh files should never have CRLF (windows) line endings
+*.sh eol=lf
+
+# env files should never have CRLF (windows) line endings
+*.env eol=lf
