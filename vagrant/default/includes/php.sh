@@ -4,7 +4,9 @@ install python-software-properties
 sudo add-apt-repository ppa:ondrej/php5-5.6
 sudo apt-get -y update && sudo apt-get -y upgrade
 
-install php5-fpm php5 php5-cli php5-curl php5-gd php5-mysql php5-sqlite php5-intl php5-xsl php5-mcrypt php5-xdebug php5-mhash
+install php5-fpm php5 php5-cli php5-curl php5-gd php5-mysql php5-sqlite php5-intl php5-xsl php5-mcrypt php5-xdebug php5-mhash \
+        php5-memcache \
+        php5-memcached
 
 sudo php5enmod mcrypt
 sudo php5enmod xdebug
