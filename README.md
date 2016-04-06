@@ -9,11 +9,11 @@ How to use it:
 # Inside
 # Vagrant.configure(2) do |config|
 
-  script = <<SCRIPT
+  script = <<-SCRIPT
     sudo apt-get update -y
     sudo apt-get install -y curl
     curl https://raw.githubusercontent.com/mjacobus/php-dev-box/master/vagrant/remote-install.sh | bash
-SCRIPT
+  SCRIPT
 
   config.vm.provision :shell, inline: script
 
