@@ -28,7 +28,7 @@ sudo sed -i 's/www-data/vagrant/g' /etc/nginx/nginx.conf
 PUBLIC_FOLDER=''
 
 if [ -d /vagrant/public ]; then
-  PUBLIC_FOLDER='/public'
+  PUBLIC_FOLDER='\/public'
 fi
 
 sudo sed -i "s/_my_public_folder/$PUBLIC_FOLDER/g" $TARGET_AVAILABLE
