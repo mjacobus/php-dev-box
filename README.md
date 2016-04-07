@@ -1,4 +1,4 @@
-PHP Dev envinronment
+PHP Dev environment
 --------------------------------
 
 How to use it:
