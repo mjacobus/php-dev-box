@@ -1,7 +1,8 @@
 # Denote text files explicitly, normalize line endings to LF on checkin and forbid conversion to CRLF on checkout
 # Without eol=lf, core.autocrlf might come in effect
-*.sh eol=lf
-*.env eol=lf
+*.sh    eol=lf
+*.env   eol=lf
+*.env.* eol=lf
 *.html  eol=lf diff=html
 *.css   eol=lf
 *.js    eol=lf
