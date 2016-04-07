@@ -18,8 +18,8 @@ for file in "$@"; do
   source "default/${file}.sh"
 done
 
-if [[ -s "/vagrant/vagrant_after_install.sh" ]]; then
-  source /vagrant/vagrant_after_install.sh
+if [[ -s "/vagrant/vagrant/vagrant_after_install.sh" ]]; then
+  source /vagrant/vagrant/vagrant_after_install.sh
 fi
 
 exit 0
