@@ -9,4 +9,5 @@ if [ ! -f $HOME/.rvm/scripts/rvm ]; then
 
   as_vagrant_append_if_not_exists 'source ~/.rvm_loader' ~vagrant/.bashrc
   as_vagrant_append_if_not_exists 'source ~/.rvm_loader' ~vagrant/.bash_profile
+  as_vagrant 'gem install bundler'
 fi
