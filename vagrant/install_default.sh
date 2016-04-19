@@ -11,6 +11,13 @@ if (($# == 0)); then
     source "default/$file"
   done
 
+  if [[ -s "/vagrant/vagrant/vagrant_after_install.sh" ]]; then
+    inform "loading custom after_install"
+    source /vagrant/vagrant/vagrant_after_install.sh
+  else
+    inform "No custom after_install found"
+  fi
+
   exit 0
 fi
 
@@ -18,8 +25,5 @@ for file in "$@"; do
   source "default/${file}.sh"
 done
 
-if [[ -s "/vagrant/vagrant/vagrant_after_install.sh" ]]; then
-  source /vagrant/vagrant/vagrant_after_install.sh
-fi
 
 exit 0
